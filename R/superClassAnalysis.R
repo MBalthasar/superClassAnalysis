@@ -4,10 +4,12 @@
 #' of a supervised classification. The functions are based on the superClass() function from
 #' the RStoolbox package by Benjamin Leutner <benjamin.leutner@uni-wuerzburg.de>.
 #'
-#' Functions included in this package are:
-#' \code{\link{SampleSaturation}}
-#' \code{\link{ResolutionSaturation}}
-#' \code{\link{PolygonSaturation}}
+#' @details Functions included in this package are:
+#' \itemize{
+#'   \item \code{\link{SampleSaturation}}
+#'   \item \code{\link{ResolutionSaturation}}
+#'   \item \code{\link{PolygonSaturation}}
+#' }
 #'
 #' @docType package
 #'
