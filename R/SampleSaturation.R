@@ -44,7 +44,6 @@
 #'                      responseCol = "class_name", prodAcc = TRUE,
 #'                      overall = TRUE, plot_graph = TRUE)
 #'
-#'
 #' @export
 SampleSaturation <- function(img, model, trainData, valData, prodAcc,
                              responseCol, nSamples, overall, plot_graph) {

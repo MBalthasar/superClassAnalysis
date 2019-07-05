@@ -13,8 +13,6 @@
 #'
 #' @param prodAcc TRUE or FALSE. If prodAcc is TRUE, the producer accuracy will be returned. If prodAcc is FALSE, the user accuracy will be returned.
 #'
-#' @param classes The column in \code{trainData}, which contains the response variable indicated with the $ sign.
-#'
 #' @param responseCol Character or integer giving the column in \code{trainData}, which contains the response variable.
 #'
 #' @param resolutions A vector containing the spatial resolutions after which the input raster will be reprojected.
@@ -45,16 +43,22 @@
 #' # Execute ResolutionSaturation function
 #' x = ResolutionSaturation(img = my_raster, model = 'rf', trainData = my_train,
 #'                      valData = my_val, resolutions = c(30, 50, 75, 100, 200),
-#'                      nSamples = 100, classes = my_train$class_name,
-#'                      responseCol = "class_name", prodAcc = TRUE, overall = TRUE,
-#'                      plot_graph = TRUE)
-#'
+#'                      nSamples = 100, responseCol = "class_name", prodAcc = TRUE,
+#'                      overall = TRUE, plot_graph = TRUE)
 #'
 #' @export
-ResolutionSaturation <- function(img, model, trainData, valData, prodAcc, classes, responseCol,
+ResolutionSaturation <- function(img, model, trainData, valData, prodAcc, responseCol,
                                  resolutions, nSamples, overall, plot_graph) {
+  # Get class names of training data
+  my_class_names <- names(trainData)
+  # Get position of desired column within the names
+  col_position <- match(responseCol, my_class_names)
+  # Subset poly to the desired column
+  trainData_subset <- trainData[,col_position]
+  # Turn data.frame into a vector
+  my_classes <- as.vector(trainData_subset@data[,1])
   # Calculate number of classes
-  number_of_classes <- nrow(raster::aggregate(data.frame(count = classes), list(value = classes), length))
+  number_of_classes <- length(unique(my_classes))
   # check number of classes, if 2 make one class -> because only one positive class after classification
   if (number_of_classes == 2) {
     number_of_classes <- 1

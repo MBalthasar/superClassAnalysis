@@ -4,8 +4,8 @@
 \alias{ResolutionSaturation}
 \title{Resolution Saturation Identification Tool}
 \usage{
-ResolutionSaturation(img, model, trainData, valData, prodAcc, classes,
-  responseCol, resolutions, nSamples, overall, plot_graph)
+ResolutionSaturation(img, model, trainData, valData, prodAcc, responseCol,
+  resolutions, nSamples, overall, plot_graph)
 }
 \arguments{
 \item{img}{A raster file.}
@@ -17,8 +17,6 @@ ResolutionSaturation(img, model, trainData, valData, prodAcc, classes,
 \item{valData}{SpatialPolygonsDataFrame or SpatialPointsDataFrame containing the validation locations (optional). If no valData is given, the trainData will be split into 70 percent training and 30 percent validation.}
 
 \item{prodAcc}{TRUE or FALSE. If prodAcc is TRUE, the producer accuracy will be returned. If prodAcc is FALSE, the user accuracy will be returned.}
-
-\item{classes}{The column in \code{trainData}, which contains the response variable indicated with the $ sign.}
 
 \item{responseCol}{Character or integer giving the column in \code{trainData}, which contains the response variable.}
 
@@ -55,9 +53,7 @@ my_val <- raster::shapefile(system.file(package = "superClassAnalysis", "extdata
 # Execute ResolutionSaturation function
 x = ResolutionSaturation(img = my_raster, model = 'rf', trainData = my_train,
                      valData = my_val, resolutions = c(30, 50, 75, 100, 200),
-                     nSamples = 100, classes = my_train$class_name,
-                     responseCol = "class_name", prodAcc = TRUE, overall = TRUE,
-                     plot_graph = TRUE)
-
+                     nSamples = 100, responseCol = "class_name", prodAcc = TRUE,
+                     overall = TRUE, plot_graph = TRUE)
 
 }
