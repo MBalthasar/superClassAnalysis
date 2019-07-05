@@ -13,8 +13,6 @@
 #'
 #' @param prodAcc TRUE or FALSE. If prodAcc is TRUE, the producer accuracy will be returned. If prodAcc is FALSE, the user accuracy will be returned.
 #'
-#' @param classes The column in \code{trainData}, which contains the response variable indicated with the $ sign.
-#'
 #' @param responseCol Character or integer giving the column in \code{trainData}, which contains the response variable.
 #'
 #' @param nSamples A vector containing the number of samples which will be used on the \code{\link[RStoolbox]{superClass}} function.
@@ -43,8 +41,8 @@
 #' # Execute SampleSaturation function
 #' x = SampleSaturation(img = my_raster, model = 'rf', trainData = my_train,
 #'                      valData = my_val, nSamples = c(10, 50, 100, 500),
-#'                      classes = my_train$class_name, responseCol = "class_name",
-#'                      prodAcc = TRUE, overall = TRUE, plot_graph = TRUE)
+#'                      responseCol = "class_name", prodAcc = TRUE,
+#'                      overall = TRUE, plot_graph = TRUE)
 #'
 #'
 #' @export
