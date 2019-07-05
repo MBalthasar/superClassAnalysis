@@ -73,7 +73,7 @@ PolygonSaturation <- function(img, model, trainData, valData, prodAcc,
     colnumber <- 1 + number_of_classes
   }
   # define additional parameters
-  count_classes <- plyr::count(classes)
+  count_classes <- plyr::count(my_classes)
   frequencys <- count_classes[,2]
   my_polygon <- sp::SpatialPolygonsDataFrame(SpatialPolygons(list()), data=data.frame())
   proj4string(my_polygon) <- raster::crs(trainData)
