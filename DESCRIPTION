@@ -1,0 +1,14 @@
+Package: superClassAnalysis
+Type: Package
+Title: Toolbox for supervised classifications
+Version: 0.1.0
+Author: Marius Philipp
+Maintainer: Marius Philipp <marius.philipp@stud-mail.uni-wuerzburg.de>
+Description: This R package contains several functions which are designed to increase the accurcacy
+             of a supervised classification. The functions are based on the superClass() function from
+             the RStoolbox package by Benjamin Leutner <benjamin.leutner@uni-wuerzburg.de>.
+Imports: sp, raster, RStoolbox, rgdal, ggplot2, reshape2, plyr, caret
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
