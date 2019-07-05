@@ -47,7 +47,7 @@
 #'
 #' @export
 SampleSaturation <- function(img, model, trainData, valData, prodAcc,
-                             classes, responseCol, nSamples, overall, plot_graph) {
+                             responseCol, nSamples, overall, plot_graph) {
   # Get class names of training data
   my_class_names <- names(trainData)
   # Get position of desired column within the names
