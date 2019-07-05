@@ -50,8 +50,16 @@
 #' @export
 SampleSaturation <- function(img, model, trainData, valData, prodAcc,
                              classes, responseCol, nSamples, overall, plot_graph) {
+  # Get class names of training data
+  my_class_names <- names(trainData)
+  # Get position of desired column within the names
+  col_position <- match(responseCol, my_class_names)
+  # Subset poly to the desired column
+  trainData_subset <- trainData[,col_position]
+  # Turn data.frame into a vector
+  my_classes <- as.vector(trainData_subset@data[,1])
   # Calculate number of classes
-  number_of_classes <- nrow(raster::aggregate(data.frame(count = classes), list(value = classes), length))
+  number_of_classes <- length(unique(my_classes))
   # check number of classes, if 2 make one class -> because only one positive class after classification
   if (number_of_classes == 2) {
     number_of_classes <- 1
