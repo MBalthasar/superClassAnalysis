@@ -12,9 +12,11 @@ the RStoolbox package by Benjamin Leutner <benjamin.leutner@uni-wuerzburg.de>.
 }
 \details{
 Functions included in this package are:
-\code{\link{SampleSaturation}}
-\code{\link{ResolutionSaturation}}
-\code{\link{PolygonSaturation}}
+\itemize{
+  \item \code{\link{SampleSaturation}}
+  \item \code{\link{ResolutionSaturation}}
+  \item \code{\link{PolygonSaturation}}
+}
 }
 \author{
 Marius Philipp \email{marius.philipp@stud-mail.uni-wuerzburg.de}
