@@ -20,4 +20,4 @@ The following functions are currently available and tested on Windows 10.
 
 ## References
 
-he functions are based on the `superClass()` function from the <a target="_blank" href="https://bleutner.github.io/RStoolbox/">RStoolbox</a> package by Benjamin Leutner benjamin.leutner@uni-wuerzburg.de.
+The functions are based on the `superClass()` function from the <a target="_blank" href="https://bleutner.github.io/RStoolbox/">RStoolbox</a> package by Benjamin Leutner benjamin.leutner@uni-wuerzburg.de.
