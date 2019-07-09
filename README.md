@@ -1,5 +1,5 @@
 # superClassAnalysis
-A toolbox for improving supervised classification accuracies
+A toolbox for improving supervised classification accuracies.
 
 ## Installation
 
@@ -17,3 +17,7 @@ The following functions are currently available and tested on Windows 10.
 * `SampleSaturation()` This function aims to identify the number of samples required per class in order to get the highest accuracy results from a supervised classicifation.
 * `ResolutionSaturation()` This function aims to identify the best spatial resolution required per class in order to get the highest accuracy results from a supervised classicifation.
 * `PolygonSaturation()` This function aims to identify the best number of polygons required per class within a training data set in order to get the highest accuracy results from a supervised classicifation. It furthermore enables the user to identify polygons which lead to lower classification accuracies for training data quality testing. The function will always use the same number of polygons per class and is therefore limited by the class with the least amount of polygons. It is overall recommended to have the same number of polygons for each class. he function will start with 2 polygons per class.
+
+## References
+
+he functions are based on the `superClass()` function from the <a target="_blank" href="https://bleutner.github.io/RStoolbox/">RStoolbox</a> package by Benjamin Leutner benjamin.leutner@uni-wuerzburg.de.
